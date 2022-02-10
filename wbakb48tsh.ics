@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:微博发布公演日程
+X-WR-TIMEZONE:Asia/Shanghai
+X-WR-CALDESC:20220211发布了微博公演
+BEGIN:VEVENT
+DTSTAMP:20190912T184136Z
+UID:20220211almanac_in_uiT81m3G
+DTSTART;VALUE=DATE:20220211
+DTEND;VALUE=DATE:20220216
+DESCRIPTION:AKB48TeamSH  #恋爱禁止条例#公演将于9月11日（周六）14：00和19：00举办，14点为施蔼倍 生日公演，19点为曾鸶淳 生日公演；#缩略图# 研修生公演将于9月12日（周日）19：00举办。三场公演门票将采取：VIP门票申请实名制抽选，普通门票和站票在官方商城售卖的方式。恋爱禁止条例公演：公演场地：万代南梦宫梦想剧场时间：9月11日 14点 /19点缩略图公演：公演场地：万代南梦宫梦想剧场时间：9月12日19点VIP门票：申请🔗：网页链接申请时间：截至9月3日21点整普通门票&amp;站票：9月11日14点恋爱禁止条例场：9月6日16：48开始售卖9月11日19点恋爱禁止条例场：9月6日17：48开始售卖9月12日19点缩略图场：9月7日17：48开始售卖金仓鼠周榜统计时间为9月4日(周六)至9月10日(周五)，快来为自己喜欢的成员应援吧！微博详情链接：https://m.weibo.cn/status/4677399825875715
+SUMMARY:近期公演动态
+BEGIN:VALARM
+TRIGGER;VALUE=DATE-TIME:20220211T013000Z
+ACTION:DISPLAY
+END:VALARM
+END:VEVENT
+END:VCALENDAR
