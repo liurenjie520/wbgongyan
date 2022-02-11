@@ -139,12 +139,12 @@ class weiboMonitor():
             print('[Error] %s' % msg)
 
 
-
-if __name__ == '__main__':
-    w = weiboMonitor()
-    w.getweiboInfo()
-    with open('wbIds.txt', 'r') as f:
-        text = f.read()
-        if text == '':
-            w.getWBQueue()
-    newWB = w.startmonitor()
+# 
+# if __name__ == '__main__':
+#     w = weiboMonitor()
+#     w.getweiboInfo()
+#     with open('wbIds.txt', 'r') as f:
+#         text = f.read()
+#         if text == '':
+#             w.getWBQueue()
+#     newWB = w.startmonitor()
