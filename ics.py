@@ -14,7 +14,7 @@ def sd(urlid,format_time):
     with open(file="wbakb48tsh.ics", encoding="utf8", mode="w") as file_object:
         start_string = "BEGIN:VCALENDAR\nVERSION:2.0\nCALSCALE:GREGORIAN\nMETHOD:PUBLISH\nX-WR-CALNAME:" \
                        + "微博发布公演日程" + "\nX-WR-TIMEZONE:Asia/Shanghai\n" \
-                       + "X-WR-CALDESC:"+bd+"发布了微博公演\n"
+                       + "X-WR-CALDESC:"+bd+"微博发布了公演\n"
         file_object.write(start_string)
         body = gyfwb.lastfanhui(urlid)
         body_string = ("BEGIN:VEVENT\nDTSTAMP:20190912T184136Z\nUID:",
