@@ -9,7 +9,20 @@ import getpic
 import content
 import htmljiexi
 import ics
+import time
+from datetime import datetime, timedelta
 
+def trans_format(time_string, from_format, to_format='%Y.%m.%d %H:%M:%S'):
+    """
+    @note 时间格式转化
+    :param time_string:
+    :param from_format:
+    :param to_format:
+    :return:
+    """
+    time_struct = time.strptime(time_string, from_format)
+    times = time.strftime(to_format, time_struct)
+    return times
 
 class weiboMonitor():
     def __init__(self, ):
@@ -74,13 +87,18 @@ class weiboMonitor():
                             self.echoMsg('Info', '发微博!')
                             self.echoMsg('Info', '目前有 %s 条微博' % (len(itemIds) + 1))
                             idd = str(j['mblog']['id'])
-                            ics.isgytrue(idd)
+
 
                             # 以下输出微博内容
 
                             txt = j
 
                             createtime = j['mblog']['created_at']
+
+                            format_time = trans_format(createtime, '%a %b %d %H:%M:%S +0800 %Y', '%Y-%m-%d %H:%M:%S')
+                            print(format_time)
+                            print(type(format_time))
+                            ics.isgytrue(idd,format_time)
                             sourcel = j['mblog']['source']
                             fasname = j['mblog']['user']['screen_name']
                             # deit = j['mblog']['edit_config']['edited']
@@ -122,11 +140,11 @@ class weiboMonitor():
 
 
 
-# if __name__ == '__main__':
-#     w = weiboMonitor()
-#     w.getweiboInfo()
-#     with open('wbIds.txt', 'r') as f:
-#         text = f.read()
-#         if text == '':
-#             w.getWBQueue()
-#     newWB = w.startmonitor()
+if __name__ == '__main__':
+    w = weiboMonitor()
+    w.getweiboInfo()
+    with open('wbIds.txt', 'r') as f:
+        text = f.read()
+        if text == '':
+            w.getWBQueue()
+    newWB = w.startmonitor()
