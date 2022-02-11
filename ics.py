@@ -29,7 +29,7 @@ def sd(urlid,format_time):
                 body1 = item[0] + 'almanac_in_' + shuijishu.suiji() + "\n"
                 body2 = "DTSTART;VALUE=DATE:" + item[0] + "\nDTEND;VALUE=DATE:" + item[1] + "\n"
                 beizhu = "DESCRIPTION:" +  item[2]+ "微博详情链接："+item[3]+"\n"
-                body3 = "SUMMARY:" + "公演动态[更新于"+format_time+"]" + "\n"
+                body3 = "SUMMARY:" + "公演动态["+format_time+"update]" + "\n"
                 tixing0 = "BEGIN:VALARM" + "\n" + "TRIGGER;VALUE=DATE-TIME:" + item[0] + "T013000Z" + "\n"
                 tixing1 = "ACTION:DISPLAY" + "\n" + "END:VALARM" + "\n"
                 body4 = body_string[1]
