@@ -5,7 +5,8 @@ import datetime
 import gyfwb
 import shuijishu
 
-def sd(urlid):
+def sd(urlid,format_time):
+    format_time=format_time
     urlid = urlid
     now_time = datetime.datetime.now() + datetime.timedelta(hours=8)
     bd = now_time.strftime('%Y%m%d')
@@ -28,7 +29,7 @@ def sd(urlid):
                 body1 = item[0] + 'almanac_in_' + shuijishu.suiji() + "\n"
                 body2 = "DTSTART;VALUE=DATE:" + item[0] + "\nDTEND;VALUE=DATE:" + item[1] + "\n"
                 beizhu = "DESCRIPTION:" +  item[2]+ "微博详情链接："+item[3]+"\n"
-                body3 = "SUMMARY:" + "近期公演动态" + "\n"
+                body3 = "SUMMARY:" + "公演动态[更新于"+format_time+"]" + "\n"
                 tixing0 = "BEGIN:VALARM" + "\n" + "TRIGGER;VALUE=DATE-TIME:" + item[0] + "T013000Z" + "\n"
                 tixing1 = "ACTION:DISPLAY" + "\n" + "END:VALARM" + "\n"
                 body4 = body_string[1]
@@ -38,7 +39,8 @@ def sd(urlid):
             file_object.write(end_string)
     return '函数执行ok'
 
-def isgytrue(urlid):
+def isgytrue(urlid,format_time):
+    format_time=format_time
     urlid = urlid
     body = gyfwb.lastfanhui(urlid)
     for item in body:
@@ -47,7 +49,7 @@ def isgytrue(urlid):
             print('没有发布公演')
         else:
             print('有公演动态！正在生成ics')
-            sd(urlid)
+            sd(urlid,format_time)
 
 
 
