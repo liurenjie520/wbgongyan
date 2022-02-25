@@ -1,6 +1,10 @@
-
+# -*- coding:utf-8 -*-
 import datetime
 
+import requests
+
+import icsgytime
+import icsgytimemp
 
 import gyfwb
 import shuijishu
@@ -29,6 +33,8 @@ def sd(urlid,format_time):
                 body1 = item[0] + 'almanac_in_' + shuijishu.suiji() + "\n"
                 body2 = "DTSTART;VALUE=DATE:" + item[0] + "\nDTEND;VALUE=DATE:" + item[1] + "\n"
                 beizhu = "DESCRIPTION:" +  item[2]+ "微博详情链接："+item[3]+"\n"
+                icsgytime.sd(item[2])
+                icsgytimemp.sd(item[2])
                 body3 = "SUMMARY:" + "公演动态["+format_time+"update]" + "\n"
                 tixing0 = "BEGIN:VALARM" + "\n" + "TRIGGER;VALUE=DATE-TIME:" + item[0] + "T013000Z" + "\n"
                 tixing1 = "ACTION:DISPLAY" + "\n" + "END:VALARM" + "\n"
@@ -50,6 +56,7 @@ def isgytrue(urlid,format_time):
         else:
             print('有公演动态！正在生成ics')
             sd(urlid,format_time)
+            requests.get("https://api.day.app/xQvkTS3VuhXsNBP74GVX78/有公演！")
 
 
 
