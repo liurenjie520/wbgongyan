@@ -33,22 +33,15 @@ def timejx(ddd):
 
     gg=[]
     opt = ''
-    for i in result2:
-        t = datetime.strptime(y + i, "%Y%m月%d日%H：%M")
+    for i in result1:
+        t = datetime.strptime(y + i, "%Y%m月%d日%H点")
         h=t.strftime('%H')
         h=int(h)
         h=h-8
         txshi = "{0:02d}".format(h)
         txshi = str(txshi)
-        # ms = t.strftime('%M%S')
-        min=t.strftime('%M')
-        min = int(min)
-        min = min - 5
-        txmin = "{0:02d}".format(min)
-        txmin = str(txmin)
-        s = t.strftime('%S')
-        s = str(s)
-        hms=txshi+txmin+s
+        ms = t.strftime('%M%S')
+        hms=txshi+ms
         ymd = t.strftime('%Y%m%d')
 
 
