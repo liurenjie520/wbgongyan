@@ -46,8 +46,14 @@ def sd(urlid,format_time):
                 body4 = body_string[1]
                 full_body = body0 + body1 + body2 + beizhu + body3 + tixing0 + tixing1 + body4
                 file_object.write(full_body)
-                icsgytime.sd(item[2])
-                icsgytimemp.sd(item[2])
+                try:
+                    icsgytime.sd(item[2])
+                    icsgytimemp.sd(item[2])
+                except:
+                    continue
+
+
+
 
             end_string = "END:VCALENDAR"
             file_object.write(end_string)
