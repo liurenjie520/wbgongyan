@@ -108,7 +108,7 @@ def panduanisgy(urlid):
                 FormData = {
                     "appToken": "AT_iaPxpUE0FLNUECu1zFnKhFR7R9NU5K8e",
                     "content": content,
-                    "summary": f"AKB48TeamSh有公演安排！",
+                    "summary": f"AKB48TeamSH有公演安排！",
                     "contentType": 2,
 
                     "topicIds": [
